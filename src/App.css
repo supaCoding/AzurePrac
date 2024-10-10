@@ -1,38 +1,129 @@
-.App {
+/* src/styles.css */
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme */
+body.light {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+h1 {
   text-align: center;
+  color: inherit;
+  /* Use the body color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  /* Light theme background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Dark Theme for Container */
+.container.dark {
+  background: #444;
+  /* Darker background for container in dark mode */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Light Theme for Container */
+.container.light {
+  background: white;
+  /* Ensure white background for light theme */
+}
+
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  background: #28a745;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.add-task {
+  margin: 0 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toggle-theme {
+  margin: 15px 0;
+}
+
+button:hover {
+  background: #218838;
+}
+
+.btn-grp {
+  margin-left: 15px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.complete-btn {
+  margin-right: 15px;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-title {
+  flex: 1;
+  cursor: pointer;
+}
+
+.task-title.completed {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.toggle-button {
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-button:hover {
+  background: #0056b3;
 }

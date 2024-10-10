@@ -1,26 +1,33 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import TaskForm from './components/taskForm';
+import TaskList from './components/taskList';
+import ThemeToggle from './components/themeToggle';
+import { TaskProvider } from './context/taskContext';
+import { ThemeProvider, useThemeContext } from './context/themeContext';
+import './App.css'; // Import the styles
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <ThemeProvider>
+      <TaskProvider>
+        <ThemedContainer />
+      </TaskProvider>
+    </ThemeProvider>
+  );
+};
+
+const ThemedContainer: React.FC = () => {
+  const { theme } = useThemeContext(); // Get the current theme
+
+  return (
+    <div className={`container ${theme}`}> {/* Apply the theme class */}
+      <h1>Taskify</h1>
+      <ThemeToggle />
+      <TaskForm />
+      <TaskList />
     </div>
   );
-}
+};
 
 export default App;
