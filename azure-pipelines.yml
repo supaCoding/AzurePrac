@@ -22,7 +22,7 @@ steps:
 
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'Personal Azure Prac'  # Replace with your Azure subscription name
+    azureSubscription: 'PersonalAzurePrac'  # Replace with your Azure subscription name
     appName: 'TaskifyAzurePrac'  # Replace with your Azure App Service name
     package: '$(System.DefaultWorkingDirectory)/build' 
     appType: 'webApp'
